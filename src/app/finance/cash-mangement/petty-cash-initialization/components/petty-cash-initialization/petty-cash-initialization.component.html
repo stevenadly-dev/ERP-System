@@ -1,0 +1,417 @@
+<app-breadcrumbs [breadcrumbsArr]="breadcrumbs"></app-breadcrumbs>
+<div class="">
+
+  <!-- =========== Form Section ============= -->
+  <mat-accordion class="collapse_with_panels">
+    <mat-expansion-panel expanded='true' hideToggle="true" (opened)="formIcon = true" (closed)="formIcon = false">
+      <mat-expansion-panel-header #formPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="formPanel._toggle()">{{formIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active" [ngClass]="{'active': activeForm==1}" (click)="activeForm = 1">Basic info</span>
+          <span class="separator">|</span>
+          <span class="heading" (click)="activeForm = 2" [ngClass]="{'active': activeForm==2}">More info</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Edit.svg" alt="img">
+            <img src="assets/icons/Main_Save.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+            <img src="assets/icons/Main_Print.svg" alt="img">
+            <img src="assets/icons/Main_Refresh.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-petty-cash-initialization-form [activeForm]="activeForm"></app-petty-cash-initialization-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" (opened)="updateIcone = true"
+      (closed)="updateIcone = false">
+      <mat-expansion-panel-header #UpdatePanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="UpdatePanel._toggle()">{{updateIcone  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Debit Account Details</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+    <div class="form_section mt-2">
+        <form>
+        <div class="form-row">
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Account</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <input disabled type="text" class="form-control">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>SubAccount</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <input disabled type="text" class="form-control">
+            </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Division</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Department</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Analysis1</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Analysis2</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Activity1</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Activity2</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+  
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" (opened)="updateIcone1 = true"
+      (closed)="updateIcone1 = false">
+      <mat-expansion-panel-header #UpdatePanel1 class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="UpdatePanel1._toggle()">{{updateIcone1  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Credit Account Details</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+    <div class="form_section mt-2">
+        <form>
+        <div class="form-row">
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Account</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <input disabled type="text" class="form-control">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>SubAccount</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <input disabled type="text" class="form-control">
+            </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Division</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Department</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Analysis1</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Analysis2</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Activity1</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Activity2</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+  
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" (opened)="updateIcone2 = true"
+      (closed)="updateIcone2 = false">
+      <mat-expansion-panel-header #UpdatePanel2 class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="UpdatePanel2._toggle()">{{updateIcone2  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">OWE You Account Details</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+    <div class="form_section mt-2">
+        <form>
+        <div class="form-row">
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>Account</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <input disabled type="text" class="form-control">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <label>SubAccount</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div class="form-group">
+                <input disabled type="text" class="form-control">
+            </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Division</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Department</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Analysis1</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Analysis2</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Activity1</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <label>Activity2</label>
+                <input type="text" class="form-control">
+                <img class="inputIcons" src="assets/icons/copyfrom.svg" alt="">
+                </div>
+            </div>
+    
+            <div class="col-md-3">
+                <div class="form-group">
+                <input disabled type="text" class="form-control">
+                </div>
+            </div>
+        </div>
+        </form>
+    </div>
+  
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

@@ -1,0 +1,77 @@
+<app-breadcrumbs [breadcrumbsArr]="breadcrumbs"></app-breadcrumbs>
+<div class="">
+
+  <!-- =========== Form Section ============= -->
+  <mat-accordion class="collapse_with_panels">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="formIcon = true"
+      (closed)="formIcon = false">
+      <mat-expansion-panel-header #formPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="formPanel._toggle()">
+            {{formIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active" [ngClass]="{'active': activeForm==1}" (click)="activeForm = 1">Basic
+            info</span>
+          <span class="separator">|</span>
+          <span class="heading" (click)="activeForm = 2" [ngClass]="{'active': activeForm==2}">Contact
+            info</span>
+          <span class="separator">|</span>
+          <span class="heading" (click)="activeForm = 3" [ngClass]="{'active': activeForm==3}">Organization
+            info</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/copyfrom.svg" (click)="openCopyFrom()" alt="img">
+            <img src="assets/icons/Main_Save.svg" alt="img" (click)="addUser()">
+            <img src="assets/icons/Main_Refresh.svg" alt="img">
+
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-create-user-main-form [activeForm]="activeForm"></app-create-user-main-form>
+      <!-- <app-petty-cash-disbursement-form [activeForm]="activeForm"></app-petty-cash-disbursement-form> -->
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!-- =============================================== -->
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" class="fixed-height-mat"
+      (opened)="form2Icon = true" (closed)="form2Icon = false">
+      <mat-expansion-panel-header #form2Panel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="form2Panel._toggle()">
+            {{form2Icon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading" [ngClass]="{'active': activeForm2==1}" (click)="activeForm2=1">Security</span>
+          <!-- <span class="separator">|</span>
+          <span class="heading" [ngClass]="{'active': activeForm2==2}" (click)="activeForm2=2">Companies</span> -->
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-users-form2 [activeForm]="activeForm2"></app-users-form2>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!-- ======================= -->
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" class="fixed-height-mat"
+      (opened)="optionsIcon = true" (closed)="optionsIcon = false">
+      <mat-expansion-panel-header #OptionsPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="OptionsPanel._toggle()">
+            {{optionsIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading " [ngClass]="{'active': activeForm3==1}" (click)="activeForm3=1">Groups</span>
+          <span class="separator">|</span>
+          <span class="heading" [ngClass]="{'active': activeForm3==2}" (click)="activeForm3=2">Roles</span>
+          <span class="separator">|</span>
+          <span class="heading" [ngClass]="{'active': activeForm3==3}" (click)="activeForm3=3">Reports</span>
+          <span class="separator">|</span>
+          <span class="heading" [ngClass]="{'active': activeForm3==4}" (click)="activeForm3=4">Print
+            outs</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/search-icon.svg" (click)="openDialog(activeForm3)" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-users-options [activeForm]="activeForm3"></app-users-options>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

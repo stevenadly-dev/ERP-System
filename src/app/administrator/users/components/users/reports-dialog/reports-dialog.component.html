@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Reports</h2>
+<mat-dialog-content class="mat-typography">
+  <ag-grid-angular #agGrid style="height: 280px;" id="myGrid" class="ag-theme-alpine" [columnDefs]="reportsColumnDefs"
+    [pagination]="true" [paginationAutoPageSize]="true" [defaultColDef]="defaultColDef" [rowData]="reportsData"
+    [rowSelection]="rowSelection" (gridReady)="onGridReady($event)">
+  </ag-grid-angular>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" color="primary" (click)="getSelected()">Done</button>
+</mat-dialog-actions>

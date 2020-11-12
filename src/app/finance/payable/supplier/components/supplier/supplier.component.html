@@ -1,0 +1,59 @@
+<app-breadcrumbs [breadcrumbsArr]="breadcrumbs"></app-breadcrumbs>
+<div class="">
+
+  <!-- =========== Form Section ============= -->
+  <mat-accordion class="collapse_with_panels">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="formIcon = true" (closed)="formIcon = false">
+      <mat-expansion-panel-header #formPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="formPanel._toggle()">{{formIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Basic info</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Edit.svg" alt="img">
+            <img src="assets/icons/Main_Save.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+            <img src="assets/icons/Main_Print.svg" alt="img">
+            <img src="assets/icons/Main_Refresh.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-supplier-form></app-supplier-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <!-- table section -->
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="tableIcon = true"
+      (closed)="tableIcon = false">
+      <mat-expansion-panel-header #tablePanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="tablePanel._toggle()">{{tableIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Address Book</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Add.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-supplier-table></app-supplier-table>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="tableFormIcone = true" (closed)="tableFormIcone = false">
+      <mat-expansion-panel-header #TableFormPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="TableFormPanel._toggle()">{{tableFormIcone  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Address info</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-supplier-table-form></app-supplier-table-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+</div>

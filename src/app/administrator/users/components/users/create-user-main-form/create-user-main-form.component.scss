@@ -1,0 +1,14 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+.confirm-licenceses {
+  @include flex-center();
+  input[type="checkbox"] {
+    margin-left: 5px;
+  }
+}
+.mat-slide-toggle-label {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+}

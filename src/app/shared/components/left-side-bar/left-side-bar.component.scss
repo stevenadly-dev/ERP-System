@@ -1,0 +1,114 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+.example-tree-invisible {
+  display: none;
+}
+
+.example-tree ul,
+.example-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.mat-tree {
+  background: transparent !important;
+}
+
+mat-tree-node {
+  @include flex-row();
+  cursor: pointer;
+  min-height: auto !important;
+
+  &[aria-level="1"] {
+    padding-left: 20px !important;
+  }
+  &[aria-level="2"] {
+    padding-left: 30px !important;
+  }
+  &[aria-level="3"] {
+    padding-left: 40px !important;
+  }
+  &[aria-level="4"] {
+    padding-left: 50px !important;
+  }
+  &[aria-level="5"] {
+    padding-left: 60px !important;
+  }
+
+  .last-leef-node {
+    padding-left: 10px !important;
+  }
+  .mat-icon {
+    color: $blue;
+    font-size: 24px;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: $blue;
+  }
+  .left-side-link {
+    color: $blue !important;
+    text-decoration: none;
+  }
+}
+.headingNode {
+  padding-top: 20px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  // padding-left: 20px;
+  @include flex-row();
+}
+.leftside-ul {
+  padding-left: 0px !important;
+}
+.ng-star-inserted > ul {
+  padding-left: 20px;
+}
+
+.toggle-btn {
+  padding: 0 !important;
+  border: 0 !important;
+  display: flex;
+  align-items: center;
+
+  @include no-border();
+  .mat-icon {
+    color: $blue;
+  }
+}
+
+.search-and-collapse-btn {
+  display: flex;
+  .search-container {
+    width: 205px;
+    height: 30px;
+    background: white;
+    margin-left: 20px;
+    margin-top: 5px;
+    position: relative;
+    .form-control {
+      height: 100%;
+      @include no-border();
+      color: $blue;
+    }
+    .search_icon {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  .toggle-left-sidebar {
+    @include flex-center;
+    // padding-top: 6px;
+    padding: 0px;
+    .mat-icon {
+      color: $dark-red;
+      font-size: 30px;
+    }
+  }
+}

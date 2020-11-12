@@ -1,0 +1,12 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+.mat-expanded {
+  .mat-expansion-panel-header-title {
+    padding-bottom: 10px;
+    border-bottom: 2px solid $blue;
+  }
+}
+.withoutBorder {
+  border: 0;
+}

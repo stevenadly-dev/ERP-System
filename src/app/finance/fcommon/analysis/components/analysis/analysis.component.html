@@ -1,0 +1,27 @@
+<app-breadcrumbs [breadcrumbsArr]="breadcrumbs"></app-breadcrumbs>
+
+<div class="">
+  <!-- =========== Form Section ============= -->
+  <mat-accordion class="collapse_with_panels">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="formIcon = true"
+      (closed)="formIcon = false">
+      <mat-expansion-panel-header #formPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="formPanel._toggle()">{{formIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">analysis</span>
+
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Edit.svg" alt="img">
+            <img src="assets/icons/Main_Save.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+            <img src="assets/icons/Main_Print.svg" alt="img">
+            <img src="assets/icons/Main_Refresh.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <app-analysis-form></app-analysis-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

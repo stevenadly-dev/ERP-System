@@ -1,0 +1,417 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+// table imports
+@import "../../../node_modules/ag-grid-community/dist/styles/ag-grid.css";
+@import "../../../node_modules/ag-grid-community/dist/styles/ag-theme-alpine.css";
+
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+.p-realtive {
+  position: relative;
+}
+.form-control {
+  border-color: $blue;
+}
+input:disabled {
+  border: none;
+}
+// reduce columns padding
+.col-xl,
+.col-xl-auto,
+.col-xl-12,
+.col-xl-11,
+.col-xl-10,
+.col-xl-9,
+.col-xl-8,
+.col-xl-7,
+.col-xl-6,
+.col-xl-5,
+.col-xl-4,
+.col-xl-3,
+.col-xl-2,
+.col-xl-1,
+.col-lg,
+.col-lg-auto,
+.col-lg-12,
+.col-lg-11,
+.col-lg-10,
+.col-lg-9,
+.col-lg-8,
+.col-lg-7,
+.col-lg-6,
+.col-lg-5,
+.col-lg-4,
+.col-lg-3,
+.col-lg-2,
+.col-lg-1,
+.col-md,
+.col-md-auto,
+.col-md-12,
+.col-md-11,
+.col-md-10,
+.col-md-9,
+.col-md-8,
+.col-md-7,
+.col-md-6,
+.col-md-5,
+.col-md-4,
+.col-md-3,
+.col-md-2,
+.col-md-1,
+.col-sm,
+.col-sm-auto,
+.col-sm-12,
+.col-sm-11,
+.col-sm-10,
+.col-sm-9,
+.col-sm-8,
+.col-sm-7,
+.col-sm-6,
+.col-sm-5,
+.col-sm-4,
+.col-sm-3,
+.col-sm-2,
+.col-sm-1,
+.col,
+.col-auto,
+.col-12,
+.col-11,
+.col-10,
+.col-9,
+.col-8,
+.col-7,
+.col-6,
+.col-5,
+.col-4,
+.col-3,
+.col-2,
+.col-1 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+// remove row minuis margin
+.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+//============== Right Side Bar ==============
+.right-side-bar .mat-expansion-panel-body {
+  padding: 10px;
+}
+.right-side-bar .mat-expansion-panel-header {
+  padding: 0px 10px;
+  height: 45px;
+}
+.task_panel > .mat-expansion-panel-content {
+  height: calc(100% - 45px);
+  overflow: auto;
+}
+// =========================================
+.breadcrumb {
+  background: transparent;
+  color: $blue;
+  padding: 0 8px;
+  margin-bottom: 0;
+}
+.breadcrumb-item + .breadcrumb-item {
+  padding: 0px;
+}
+.breadcrumb-item + .breadcrumb-item::before {
+  display: inline-block;
+  color: $blue;
+  content: "keyboard_arrow_right";
+  font-family: "Material Icons";
+  font-size: 22px;
+  padding: 0;
+}
+
+// Collapse with panels in pages
+.collapse_with_panels {
+  .mat-expansion-panel {
+    box-shadow: 0px 3px 4px #0000001a !important;
+  }
+
+  .options {
+    img {
+      margin: 0px 5px;
+    }
+  }
+
+  .mat-icon {
+    color: $blue;
+    font-size: 30px;
+    height: 29px;
+    width: 29px;
+  }
+
+  .heading {
+    margin: 0px 5px;
+    font-size: 14px;
+    font-weight: $regular;
+    &.active {
+      color: $blue;
+      font-weight: 600;
+    }
+  }
+
+  .form_section,
+  .form-group {
+    label {
+      color: $blue;
+      font-size: 13px;
+      margin: 0;
+      position: absolute;
+      left: 4px;
+      top: -12px;
+      background: #fff;
+      padding: 0px 6px;
+      z-index: 9;
+    }
+    .form-control {
+      border-radius: 0;
+      font-size: 13px;
+      font-weight: $regular;
+    }
+    input,
+    .form-control {
+      height: 2em;
+    }
+  }
+}
+
+.withoutBorder {
+  border: none;
+}
+// -----------------------------------------table styles
+
+// .erp-header-table-cell {
+//   height: 32px !important;
+//   background: red !important;
+// }
+// .ag-header-row-column {
+//   height: 32px !important;
+// }
+.ag-cell-label-container {
+  /*Necessary to allow for text to grow vertically*/
+  height: 100%;
+}
+
+.ag-header-cell-label {
+  /*Necessary to allow for text to grow vertically*/
+  height: 100%;
+  padding: 0 !important;
+}
+
+// .ag-header-cell-label .ag-header-cell-text {
+//   /*Force the width corresponding at how much width
+//     we need once the text is laid out vertically*/
+//   width: 55px;
+//   // writing-mode: vertical-lr;
+//   // -ms-writing-mode: tb-lr;
+//   // line-height: 2em;
+//   // margin-top: 60px;
+// }
+
+.ag-pivot-off .ag-header-group-cell {
+  font-size: 50px;
+}
+
+.ag-pivot-on .ag-header-group-cell {
+  font-size: 10px;
+  color: green;
+}
+
+.ag-pivot-off .ag-header-cell-label {
+  color: $blue;
+}
+
+.ag-pivot-on .ag-header-cell-label {
+  font-size: 10px;
+  // height: 90px;
+  // padding-top: 36px;
+  margin-left: 0px;
+  color: $blue;
+  font-weight: bold;
+}
+
+// .ag-pivot-on .ag-header-cell-label .ag-header-cell-text {
+//   /*There is empty space left at the top from the menu and sort
+//     icons not used*/
+//   margin-top: 25px;
+// }
+
+/*Floating filters*/
+.ag-floating-filter-body {
+  height: 50px;
+}
+
+.ag-floating-filter-body input {
+  height: 49px;
+}
+
+.ag-floating-filter-button {
+  margin-top: -49px;
+}
+
+.ag-floating-filter-button button {
+  height: 49px;
+}
+
+.ag-floating-filter-body input {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.ag-theme-alpine .ag-header {
+  background: transparent;
+}
+
+.ag-cell {
+  border: 1px solid $blue;
+}
+
+.ag-theme-alpine .ag-tool-panel-wrapper {
+  background: transparent;
+  // border: 1px solid $blue;
+  color: $blue !important;
+}
+// .ag-theme-alpine .ag-ltr .ag-cell {
+//   // margin: -2px 0px;
+// }
+
+.ag-theme-alpine .ag-row,
+.ag-theme-alpine .ag-header {
+  border: none !important;
+}
+// .ag-theme-alpine .ag-row {
+//   height: 26px;
+// }
+.ag-theme-alpine .ag-header {
+  margin-bottom: -1px;
+}
+
+// center text at header labels
+.ag-header-group-cell-label,
+.ag-header-cell-label {
+  justify-content: center;
+}
+.ag-header-row {
+  background-color: #ebecf1;
+  border: none;
+}
+// remove border for the wrapper
+.ag-root-wrapper {
+  border: none !important;
+}
+.ag-tool-panel-horizontal-resize {
+  width: 2px;
+  background: $blue;
+}
+
+.ag-column-select-column-label,
+.ag-input-field-label,
+.ag-column-drop-title {
+  font-weight: bold;
+}
+
+.ag-icon-menu {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+
+  ::before {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+.ag-paging-panel {
+  height: 32px !important;
+}
+
+// ============================change style of material cards
+.fixed-height-mat {
+  .mat-expansion-panel-content {
+    .mat-expansion-panel-body {
+      height: 240px !important;
+      overflow-y: auto !important;
+      overflow-x: hidden;
+    }
+  }
+}
+.mat-expansion-panel-header-title {
+  padding-bottom: 5px !important;
+}
+
+mat-panel-title {
+  .heading {
+    color: #b2b2b2;
+    font-weight: $regular;
+    font-size: 18px;
+    &.active {
+      color: $blue;
+      font-weight: bold;
+    }
+  }
+}
+::-webkit-calendar-picker-indicator {
+  filter: opacity(0);
+  -webkit-filter: opacity(0);
+  position: absolute;
+  right: 7px;
+  z-index: 9;
+  cursor: pointer;
+}
+
+@include inputIcons();
+input[type="date"] {
+  color: $blue;
+}
+
+.form-group {
+  position: relative;
+}
+
+app-dynamic-tabs {
+  position: fixed;
+  top: 27px;
+  width: 97%;
+  z-index: 995;
+
+  @media (max-width: 1200px) {
+    top: 64px;
+  }
+}
+
+.mat-expansion-panel-body {
+  padding: 5px 8px !important;
+}
+
+.options {
+  img {
+    width: 20px;
+    margin: 5px;
+  }
+}
+
+@include checkbox();
+
+@include mat-toggle-btn();
+
+.inline-flex-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  height: auto;
+}
+select.form-control {
+  padding: 0;
+}

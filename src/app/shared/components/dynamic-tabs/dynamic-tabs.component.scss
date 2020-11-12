@@ -1,0 +1,36 @@
+@import "src/app/scss/variables.scss";
+
+.dynamic_tabs_wrapper {
+  .tab-font {
+    color: $blue;
+    cursor: pointer;
+    position: relative;
+    // min-width: 160px;
+    display: inline-block;
+    padding: 2px;
+    padding-right: 20px;
+
+    &.less-6 {
+      min-width: 160px;
+      padding-right: 20px;
+    }
+    &.active {
+      background: #fff;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      box-shadow: -1px -1px 6px #00000029;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    .mat-icon {
+      position: absolute;
+      font-size: 15px;
+      width: 15px;
+      height: 15px;
+      top: 4;
+      right: 4px;
+      font-weight: bold;
+    }
+  }
+}

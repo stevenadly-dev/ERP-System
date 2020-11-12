@@ -1,0 +1,13 @@
+<app-header></app-header>
+<app-left-side-bar class="left-side-bar" [ngClass]="{' res-not-active': responsiveRightSidebarNotActive}">
+</app-left-side-bar>
+<section class="main-container">
+
+  <app-dynamic-tabs></app-dynamic-tabs>
+  <router-outlet></router-outlet>
+
+
+</section>
+<app-right-side-bar class="right-side-bar" [ngClass]="{' res-not-active': responsiveLeftSidebarNotActive}">
+</app-right-side-bar>
+<app-footer></app-footer>

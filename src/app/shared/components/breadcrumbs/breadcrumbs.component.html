@@ -1,0 +1,10 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><img src="/assets/icons/Home.svg" alt="img"></li>
+    <li class="breadcrumb-item" *ngFor="let breadcrumb of breadcrumbsArr; let last= last;"
+      [attr.aria-current]="last? 'page':null">{{breadcrumb.name}}</li>
+  </ol>
+</nav>
+
+<!-- aria-current="page" -->
+<!-- [attr.aria-current]="last? 'page':null" -->

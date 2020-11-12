@@ -1,0 +1,63 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><img src="/assets/icons/Home.svg" alt="img"></li>
+    <li class="breadcrumb-item">Finance</li>
+    <li class="breadcrumb-item">Gemeral Ledger</li>
+    <li class="breadcrumb-item">Chart Of Account Category</li>
+    <li class="breadcrumb-item" aria-current="page">Fin***-Create</li>
+  </ol>
+</nav>
+<div class="main_page_content_wrapper">
+  <!-- =========== Form Section ============= -->
+  <mat-accordion class="collapse_with_panels">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="formIcon = true"
+      (closed)="formIcon = false">
+      <mat-expansion-panel-header #formPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="formPanel._toggle()">{{formIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Chart Of Account Category</span>
+          <!-- <span class="heading active">Company</span> -->
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Edit.svg" alt="img">
+            <img src="assets/icons/Main_Save.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+            <img src="assets/icons/Main_Print.svg" alt="img">
+            <img src="assets/icons/Main_Refresh.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <app-chart-of-account-category-form></app-chart-of-account-category-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <!-- table section -->
+  <mat-accordion class="collapse_with_panels m-t-50 test">
+    <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="tableIcon = true"
+      (closed)="tableIcon = false">
+      <mat-expansion-panel-header #tablePanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="tablePanel._toggle()">{{tableIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Chart of Account Sub Category</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Add.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <!-- Sections Goes Here -->
+      <!-- <h1>lorem</h1> -->
+
+      <div class="example-wrapper">
+        <app-sub-of-account-sub-category-table></app-sub-of-account-sub-category-table>
+      </div>
+
+
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+
+</div>

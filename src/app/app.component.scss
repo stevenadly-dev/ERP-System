@@ -1,0 +1,59 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+.main-container {
+  margin: 50px 262px 0px 262px;
+  padding: 15px;
+  min-height: calc(100vh - 105px);
+  position: relative;
+  transition-duration: 1s;
+
+  @media (max-width: 1200px) {
+    margin: 100px 0 0px 0;
+  }
+}
+
+.left-side-bar {
+  margin: 50px 0px 0px 0px;
+  padding: 0;
+  min-width: 262px;
+  height: calc(100% - 50px);
+  background-color: $gray;
+  position: fixed;
+  left: 0px;
+  top: 0;
+  overflow-y: auto;
+  box-shadow: 3px 0px 6px $shadow;
+  z-index: 2;
+  transition-duration: 1s;
+
+  @media (max-width: 1200px) {
+    margin: 100px 0px 0px 0px;
+
+    &.res-not-active {
+      left: -262px !important;
+    }
+  }
+}
+
+.right-side-bar {
+  margin: 50px 0px 0px 0px;
+  padding: 0;
+  width: 262px;
+  height: calc(100% - 50px);
+  background-color: $gray;
+  position: fixed;
+  right: 0px;
+  top: 0;
+  overflow: auto;
+  box-shadow: -3px 0px 6px $shadow;
+  z-index: 2;
+  transition-duration: 1s;
+
+  @media (max-width: 1200px) {
+    margin: 100px 0px 0px 0px;
+    &.res-not-active {
+      right: -262px !important;
+    }
+  }
+}

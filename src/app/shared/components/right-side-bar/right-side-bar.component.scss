@@ -1,0 +1,44 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+.mat-expansion-panel-header-title{
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0;
+    color: $blue;
+    font-weight: bold;
+}
+.mat-expansion-panel{
+    background: $gray;
+    margin-bottom: 10px!important;
+}
+.mat-expansion-panel-body{
+    padding: 10px 10px 10px!important;
+}
+.mat-expansion-panel-header.mat-expanded{
+    height: 45px;
+}
+.mat-icon{
+    color: $dark-red;
+    font-size: 30px;
+}
+.task_mat-expansion-panel-header-title{
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-size: 18px;
+    font-weight: normal;
+}
+.task_panel{
+    box-shadow: none;
+    border-radius: 0!important;
+    margin: 0!important;
+    height: 100%;
+}
+.mat-expansion-panel-header{
+    border-bottom: 2px solid $blue;
+    border-radius: 0;
+}
+.tasks_wrapper{
+    height: 50%;
+    overflow: auto;
+}

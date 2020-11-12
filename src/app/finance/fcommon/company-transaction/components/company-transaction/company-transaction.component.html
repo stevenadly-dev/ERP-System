@@ -1,0 +1,30 @@
+<app-breadcrumbs [breadcrumbsArr]="breadcrumbs"></app-breadcrumbs>
+
+<!-- table section -->
+<mat-accordion class="collapse_with_panels m-t-50">
+  <mat-expansion-panel expanded='true' hideToggle="true" class="fixed-height-mat" (opened)="tableIcon = true"
+    (closed)="tableIcon = false">
+    <mat-expansion-panel-header #tablePanel class="p-0" (click)="$event.stopPropagation();">
+      <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+        <mat-icon (click)="tablePanel._toggle()">{{tableIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+        </mat-icon>
+        <span class="heading active">Company Transaction</span>
+
+        <div class="options ml-auto">
+          <img src="assets/icons/Main_Edit.svg" alt="img">
+          <img src="assets/icons/Main_Save.svg" alt="img">
+          <img src="assets/icons/Main_Delete.svg" alt="img">
+          <img src="assets/icons/Main_Print.svg" alt="img">
+          <img src="assets/icons/Main_Refresh.svg" alt="img">
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+
+    <div class="example-wrapper">
+      <app-company-transaction-tabel></app-company-transaction-tabel>
+    </div>
+
+
+  </mat-expansion-panel>
+</mat-accordion>

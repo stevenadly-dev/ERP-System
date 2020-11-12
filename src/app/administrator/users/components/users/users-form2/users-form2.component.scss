@@ -1,0 +1,12 @@
+@import "src/app/scss/variables.scss";
+label{
+    color: $blue;
+}
+.pass-wrapper{
+    left: -20px!important;
+}
+.pass-validate{
+    small{
+        color: #b2b2b2;
+    }
+}

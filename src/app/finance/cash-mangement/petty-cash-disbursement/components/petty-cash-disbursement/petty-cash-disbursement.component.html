@@ -1,0 +1,61 @@
+<app-breadcrumbs [breadcrumbsArr]="breadcrumbs"></app-breadcrumbs>
+<div class="">
+
+  <!-- =========== Form Section ============= -->
+  <mat-accordion class="collapse_with_panels">
+    <mat-expansion-panel expanded='true' hideToggle="true" (opened)="formIcon = true" (closed)="formIcon = false">
+      <mat-expansion-panel-header #formPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="formPanel._toggle()">{{formIcon  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active" [ngClass]="{'active': activeForm==1}" (click)="activeForm = 1">Basic info</span>
+          <span class="separator">|</span>
+          <span class="heading" (click)="activeForm = 2" [ngClass]="{'active': activeForm==2}">More info</span>
+          <div class="options ml-auto">
+            <img src="assets/icons/Main_Edit.svg" alt="img">
+            <img src="assets/icons/Main_Save.svg" alt="img">
+            <img src="assets/icons/Main_Delete.svg" alt="img">
+            <img src="assets/icons/Main_Print.svg" alt="img">
+            <img src="assets/icons/Main_Refresh.svg" alt="img">
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-petty-cash-disbursement-form [activeForm]="activeForm"></app-petty-cash-disbursement-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" (opened)="tableIcone = true"
+      (closed)="tableIcone = false">
+      <mat-expansion-panel-header #TablePanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="TablePanel._toggle()">{{tableIcone  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+          <span class="heading active">Disbursement Table</span>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-petty-cash-disbursement-table></app-petty-cash-disbursement-table>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="collapse_with_panels m-t-50">
+    <mat-expansion-panel class="mat-expansion-300px" expanded='true' hideToggle="true" (opened)="tableFormIcone = true" (closed)="tableFormIcone = false">
+      <mat-expansion-panel-header #TableFormPanel class="p-0" (click)="$event.stopPropagation();">
+        <mat-panel-title class="align-items-center" (click)="$event.stopPropagation();">
+          <mat-icon (click)="TableFormPanel._toggle()">{{tableFormIcone  ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}
+          </mat-icon>
+
+          <span class="heading active" [ngClass]="{'active': activeForm2==1}" (click)="activeForm2=1">Line Detail</span>
+          <span class="separator">|</span>
+          <span class="heading " [ngClass]="{'active': activeForm2==2}" (click)="activeForm2=2">Account Detail</span>
+          <span class="separator">|</span>
+          <span class="heading" [ngClass]="{'active': activeForm2==3}" (click)="activeForm2=3">Line More Info</span>
+
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-petty-cash-disbursement-table-form [activeForm]="activeForm2"></app-petty-cash-disbursement-table-form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

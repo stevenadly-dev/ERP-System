@@ -1,0 +1,57 @@
+<div class="sidebar">
+
+
+  <div class="search-and-collapse-btn">
+    <div class="search-container">
+      <input matInput class="form-control" (input)="filterChanged($event.target.value)" placeholder="Search Skill">
+      <div class="search_icon">
+        <img src="assets/icons/search-icon.svg" alt="">
+      </div>
+    </div>
+
+    <span class="toggle-left-sidebar">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">keyboard_arrow_left</mat-icon>
+    </span>
+
+  </div>
+
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+
+
+    <!-- if it was last child in the tree -->
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding>
+      <div class="last-leef-node"> <a (click)=" openLink(node.item,node.r_link)"
+          class="left-side-link">{{node.item}}</a></div>
+    </mat-tree-node>
+
+
+    <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+
+
+      <ng-container *ngIf="!node.isHeading">
+        <mat-icon class="mat-icon-rtl-mirror" matTreeNodeToggle>
+          {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+        <span class="left-side-link" (click)=" openLink(node.item,node.r_link)">
+          {{node.item}}
+        </span>
+      </ng-container>
+      <ng-container *ngIf="node.isHeading">
+        <div class="headingNode" matTreeNodeToggle>
+          <div *ngIf="node.icon">
+            <img [src]="node.icon" alt="">
+          </div>
+          <span class="title">
+            {{node.item}}
+          </span>
+        </div>
+
+
+      </ng-container>
+    </mat-tree-node>
+
+  </mat-tree>
+
+
+
+</div>

@@ -1,0 +1,30 @@
+<div *ngIf="activeForm == 1">
+  <ag-grid-angular #agGrid style="height: 280px;" id="myGrid" class="ag-theme-alpine" [columnDefs]="groupsColumnDefs"
+    [pagination]="true" [paginationAutoPageSize]="true" [defaultColDef]="defaultColDef" [rowData]="groupsData"
+    [rowHeight]="32" (gridReady)="onGridReady($event)" (cellValueChanged)="submitData(groupsData)"
+    (rowDataChanged)="submitData(groupsData)">
+  </ag-grid-angular>
+</div>
+<div *ngIf="activeForm == 2">
+  {{rolesData|json}}
+  <ag-grid-angular #agGrid style="height: 280px;" id="myGrid" class="ag-theme-alpine" [columnDefs]="rolesColumnDefs"
+    [pagination]="true" [paginationAutoPageSize]="true" [defaultColDef]="defaultColDef" [rowData]="rolesData"
+    (gridReady)="onGridReady($event)" (cellValueChanged)="submitRoles(rolesData)"
+    [frameworkComponents]="frameworkComponents" (rowDataChanged)="submitRoles(rolesData)">
+  </ag-grid-angular>
+  <!-- (rowDataChanged)="getRolesData($event.gridApi)" -->
+</div>
+<div *ngIf="activeForm == 3">
+  <ag-grid-angular #agGrid style="height: 280px;" id="myGrid" class="ag-theme-alpine" [columnDefs]="reportsColumnDefs"
+    [pagination]="true" [paginationAutoPageSize]="true" [defaultColDef]="defaultColDef" [rowData]="reportsData"
+    (gridReady)="onGridReady($event)" (cellValueChanged)="submitReports(reportsData)"
+    (rowDataChanged)="submitReports(reportsData)">
+  </ag-grid-angular>
+</div>
+<div *ngIf="activeForm == 4">
+  <ag-grid-angular #agGrid style="height: 280px;" id="myGrid" class="ag-theme-alpine" [columnDefs]="printColumnDefs"
+    [pagination]="true" [paginationAutoPageSize]="true" [defaultColDef]="defaultColDef" [rowData]="printData"
+    (gridReady)="onGridReady($event)" (cellValueChanged)="submitPrintOuts(printData)"
+    (rowDataChanged)="submitPrintOuts(printData)">
+  </ag-grid-angular>
+</div>

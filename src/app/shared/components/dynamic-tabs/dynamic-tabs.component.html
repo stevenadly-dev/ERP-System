@@ -1,0 +1,15 @@
+<div class="dynamic_tabs_wrapper">
+  <nav mat-tab-nav-bar mainTabs class="scroll mainTabs">
+    <!--   [active]="activeLinkIndex == i" -->
+    <a *ngFor="let link of navLinks; let i = index" mat-tab-link class="tab-font mr-2" (click)="activate(i);"
+      title="{{link.label}}" [ngClass]="{active: activeLinkIndex == i,'less-6': tabsSize < 6}" [title]="link.label">
+      <span>{{ tabsSize > 6 ? (link.label | slice :0 :6): (link.label)}} <ng-container *ngIf="tabsSize > 6">..
+        </ng-container>
+      </span>
+      <span (click)="closeTab(i)">
+        <mat-icon>close</mat-icon>
+      </span>
+    </a>
+  </nav>
+
+</div>

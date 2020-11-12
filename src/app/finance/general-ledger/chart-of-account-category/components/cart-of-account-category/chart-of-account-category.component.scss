@@ -1,0 +1,25 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+
+.mat-expanded {
+    .mat-expansion-panel-header-title {
+      padding-bottom: 10px;
+      border-bottom: 2px solid $blue;
+    }
+  }
+  .withoutBorder {
+    border: 0;
+  }
+  .test{
+      margin-top: 5px;
+      margin-left: 12px;
+      color: $blue;
+  }
+  .light{
+      color: silver;
+  }
+  .m-t-50 {
+    display: block;
+    margin-top: 50px !important;
+  }  
+  @include checkbox();

@@ -1,0 +1,25 @@
+@import "src/app/scss/variables.scss";
+@import "src/app/scss/mixins.scss";
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+.logo {
+  height: 180px;
+  width: 180px;
+  margin: 5px;
+  border: 1px solid $blue;
+  text-align: center;
+  @include flex-center();
+}
+@include checkbox();
